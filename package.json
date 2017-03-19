@@ -30,7 +30,7 @@
     "react-dom": "^15.4.2",
     "react-helmet": "^4.0.0",
     "safe-access": "^0.1.0",
-    "sass-loader": "^4",
+    "sass-loader": "^6.0.3",
     "underscore.string": "^3.2.3"
   },
   "devDependencies": {

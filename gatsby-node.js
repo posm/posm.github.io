@@ -3,6 +3,7 @@ const path = require('path')
 const select = require(`unist-util-select`)
 const precache = require(`sw-precache`)
 const fs = require(`fs-extra`)
+const ExtractTextPlugin = require("extract-text-webpack-plugin")
 
 exports.createPages = ({ args }) => {
   const { graphql } = args
@@ -74,17 +75,41 @@ exports.modifyAST = ({ args }) => {
 exports.modifyWebpackConfig = ({ args }) => {
   const { config, stage } = args
 
-  console.log("stage:", stage)
-
   switch (stage) {
-    case 'build-css':
-    case 'build-javascript':
-      config.loader('scss', cfg => {
-        cfg.test = /\.scss$/
-        cfg.loaders = ["style-loader", "css-loader", "sass-loader"]
-
-        return cfg
+    case "develop":
+      config.loader("sass", {
+        test: /\.(sass|scss)$/,
+        exclude: /\.module\.(sass|scss)$/,
+        loaders: ["style", "css", "postcss", "sass"],
       })
+
+      break
+
+    case "build-css":
+      config.loader("sass", {
+        test: /\.(sass|scss)$/,
+        exclude: /\.module\.(sass|scss)$/,
+        loader: ExtractTextPlugin.extract(["css?minimize", "postcss", "sass"]),
+      })
+
+      break
+
+    case "build-html":
+      config.loader("sass", {
+        test: /\.(sass|scss)$/,
+        exclude: /\.module\.(sass|scss)$/,
+        loader: "null",
+      })
+
+      break
+
+    case "build-javascript":
+      config.loader("sass", {
+        test: /\.(sass|scss)$/,
+        exclude: /\.module\.(sass|scss)$/,
+        loader: "null",
+      })
+
       break
   }
 
