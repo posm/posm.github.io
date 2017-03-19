@@ -1,0 +1,156 @@
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+$topbar-background: #fff;
+$topbar-hover-color: darken($topbar-background, 10%);
+
+.marketing-topbar {
+  background: $topbar-background;
+  font-size: rem-calc(13);
+  font-weight: bold;
+  z-index: 2;
+  position: relative;
+
+  @include clearfix;
+
+  ul:first-child { float: left; }
+  ul:last-child  { float: right; }
+
+  .topbar-title > a {
+    > img {
+      position: relative;
+      top: -1px;
+    }
+  }
+
+  .menu a {
+    height: 45px;
+    line-height: 45px !important;
+    color: #333;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+
+    &:hover:not(.button),
+    &:focus {
+      background: darken($topbar-background, 20%);
+    }
+
+    &.button {
+      border-radius: 0;
+      box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+    }
+  }
+}
+
+div.content {
+  margin: 0 25px;
+
+  img {
+    padding: 0 100px;
+  }
+}
+
+.footer {
+  background: #333;
+  padding: 24px 0 10px;
+
+  .design-border {
+    border-bottom: 1px solid #484848;
+    padding-bottom: 5px;
+    margin-bottom: 25px;
+  }
+
+  .zurb-logo {
+    color: #858585;
+    font-weight: normal;
+    background: url('../images/footer-icons.png') no-repeat 0 3px;
+    padding: 23px 0 0 0 !important;
+    font-size: em-calc(16px);
+    display: inline-block;
+    width: 90px;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  .zurb-links {
+    margin: 0;
+    display: inline-block;
+    padding-bottom: 0px;
+
+    li {
+      display: block;
+      float: left;
+      margin-left: 6px;
+      text-transform: uppercase;
+      font-weight: 700;
+      font-size: 0.75rem;
+    }
+
+    a {
+      color: #666;
+      padding: 3px 6px;
+
+      &:hover {
+        color: #777;
+      }
+    }
+  }
+
+  .copyright {
+    margin: 6px 0 0;
+    font-size: 0.75rem;
+    color: #666;
+  }
+
+  .home-social {
+    display: block;
+    float: right;
+    margin-bottom: 8px;
+
+    li {
+      list-style: none;
+      display: block;
+      float: left;
+      margin-left: 10px;
+
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+
+    a {
+      display: block;
+      height: 50px;
+      width: 50px;
+      background: url('../images/social.png') no-repeat center 0;
+
+      &:hover {
+        opacity: 0.8;
+      }
+
+      &.twitter {
+        background-position: center 0;
+      }
+
+      &.youtube {
+        background: url('../images/youtube.png') no-repeat center 0;
+      }
+
+      &.facebook {
+        background-position: center -200px;
+      }
+
+      &.mail {
+        background-position: center -400px;
+      }
+    }
+  }
+}

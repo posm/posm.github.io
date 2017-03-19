@@ -1,0 +1,49 @@
+{
+  "name": "posm.io",
+  "description": "POSM promo site / docs",
+  "version": "0.0.0",
+  "author": "Seth Fitzsimmons <seth@mojodna.net>",
+  "dependencies": {
+    "foundation-sites": "^6.3.1",
+    "gatsby": "1.0.0-alpha12",
+    "gatsby-link": "1.0.0-alpha12",
+    "gatsby-parser-remark": "1.0.0-alpha12",
+    "gatsby-parser-sharp": "1.0.0-alpha12",
+    "gatsby-plugin-google-analytics": "1.0.0-alpha12",
+    "gatsby-plugin-manifest": "1.0.0-alpha12",
+    "gatsby-plugin-offline": "1.0.0-alpha12",
+    "gatsby-plugin-preact": "1.0.0-alpha12",
+    "gatsby-plugin-sharp": "1.0.0-alpha12",
+    "gatsby-source-filesystem": "1.0.0-alpha12",
+    "gatsby-typegen-filesystem": "1.0.0-alpha12",
+    "gatsby-typegen-remark": "1.0.0-alpha12",
+    "gatsby-typegen-remark-copy-linked-files": "1.0.0-alpha12",
+    "gatsby-typegen-remark-prismjs": "1.0.0-alpha12",
+    "gatsby-typegen-remark-responsive-iframe": "1.0.0-alpha12",
+    "gatsby-typegen-remark-responsive-image": "1.0.0-alpha12",
+    "gatsby-typegen-remark-smartypants": "1.0.0-alpha12",
+    "gatsby-typegen-sharp": "1.0.0-alpha12",
+    "lodash": "^4.15.0",
+    "moment": "^2.14.1",
+    "node-sass": "^4.5.0",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "react-helmet": "^4.0.0",
+    "safe-access": "^0.1.0",
+    "sass-loader": "^4",
+    "underscore.string": "^3.2.3"
+  },
+  "devDependencies": {
+    "eslint": "^3.18.0",
+    "gh-pages": "^0.12.0"
+  },
+  "license": "MIT",
+  "main": "n/a",
+  "scripts": {
+    "dev": "gatsby develop",
+    "lint": "./node_modules/.bin/eslint --ext .js,.jsx --ignore-pattern public .",
+    "develop": "gatsby develop",
+    "build": "gatsby build",
+    "deploy": "gatsby build --prefix-links && gh-pages -d public"
+  }
+}
