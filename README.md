@@ -5,7 +5,7 @@ POSM documentation and about site.
 ## Installation
 
 ```bash
-yarn
+$ yarn
 ```
 
 (This assumes you have `yarn` installed; that can be done using `npm install -g yarn`)
@@ -13,5 +13,11 @@ yarn
 ## Running in development
 
 ```bash
-yarn run develop
+$ yarn run develop
+```
+
+## Deploying to GitHub Pages
+
+```bash
+$ yarn run deploy
 ```
