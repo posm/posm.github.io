@@ -12,7 +12,9 @@ class PageRoute extends React.Component {
       <div>
         <div className="content">
           <Helmet title={`${post.frontmatter.title} | ${siteTitle}`}/>
-          <h1>{post.frontmatter.title}</h1>
+          {post.frontmatter.title &&
+            <h1>{post.frontmatter.title}</h1>
+          }
           <div dangerouslySetInnerHTML={{ __html: post.html }} />
         </div>
         <div className="footer">
