@@ -1,8 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router'
 import { prefixLink } from 'gatsby-helpers'
-import 'foundation-sites/dist/css/foundation.min.css'
-// import 'foundation-sites/scss/foundation.scss'
 
 import posmLogo from 'images/posm.png'
 import 'css/styles.scss'

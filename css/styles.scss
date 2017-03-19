@@ -1,10 +1,4 @@
-@mixin clearfix {
-  &:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-}
+@import '~foundation-sites/assets/foundation';
 
 $topbar-background: #fff;
 $topbar-hover-color: darken($topbar-background, 10%);
