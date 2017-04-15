@@ -1,12 +1,11 @@
 const Promise = require('bluebird')
 const path = require('path')
 const select = require(`unist-util-select`)
-const precache = require(`sw-precache`)
 const fs = require(`fs-extra`)
 const ExtractTextPlugin = require("extract-text-webpack-plugin")
 
-exports.createPages = ({ args }) => {
-  const { graphql } = args
+exports.createPages = ({ graphql, actionCreators }) => {
+  const { upsertPage } = actionCreators
 
   return new Promise((resolve, reject) => {
     const page = path.resolve('templates/page.js')
@@ -24,11 +23,12 @@ exports.createPages = ({ args }) => {
     .then(result => {
       if (result.errors) {
         console.log(result.errors)
-        reject(result.errors)
+        resolve()
+        // reject(result.errors)
       }
 
       // Create pages.
-      const pages = result.data.allMarkdownRemark.edges.map(edge => (
+      result.data.allMarkdownRemark.edges.map(edge => (
         {
           path: edge.node.slug, // required
           component: page,
@@ -36,44 +36,34 @@ exports.createPages = ({ args }) => {
             slug: edge.node.slug,
           },
         }
-      ))
+      )).forEach(page => upsertPage(page))
 
-      resolve(pages)
+      resolve()
     })
   })
 }
 
 // Add custom url pathname for pages
-exports.modifyAST = ({ args }) => {
-  const { ast } = args
-  const files = select(ast, "File")
+exports.onNodeCreate = ({ node, actionCreators, getNode }) => {
+  const { updateNode } = actionCreators
 
-  files.forEach((file) => {
-    if (file.extension !== "md") {
-      return
+  if (node.type === `File` && node.slug == null) {
+    node.slug = `/${path.dirname(node.relativePath)}/`
+
+    updateNode(node)
+  } else if (node.type === `MarkdownRemark` && node.slug == null) {
+    const fileNode = getNode(node.parent)
+    node.slug = fileNode.slug
+
+    if (node.frontmatter.path != null) {
+      node.slug = node.frontmatter.path
     }
 
-    const parsedFilePath = path.parse(file.relativePath)
-    const slug = `/${parsedFilePath.dir}/`
-    file.slug = slug
-
-    const markdownNode = select(file, `MarkdownRemark`)[0]
-
-    if (markdownNode) {
-      if (markdownNode.frontmatter.path != null) {
-        markdownNode.slug = markdownNode.frontmatter.path
-        file.slug = markdownNode.slug
-      } else {
-        markdownNode.slug = slug
-      }
-    }
-  })
-
-  return files
+    updateNode(node)
+  }
 }
 
-exports.modifyWebpackConfig = ({ args }) => {
-  const { config, stage } = args
+exports.modifyWebpackConfig = ({ config, stage }) => {
 
   switch (stage) {
     case "develop":

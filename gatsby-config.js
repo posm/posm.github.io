@@ -7,6 +7,13 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
+        path: `${__dirname}/images`,
+        name: 'images',
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
         path: `${__dirname}/pages`,
         name: 'pages',
       },
@@ -20,13 +27,7 @@ module.exports = {
           {
             resolve: `gatsby-typegen-remark-responsive-image`,
             options: {
-              maxWidth: 590,
-            },
-          },
-          {
-            resolve: `gatsby-typegen-remark-responsive-iframe`,
-            options: {
-              wrapperStyle: `margin-bottom: 1.0725rem`,
+              maxWidth: 1000,
             },
           },
           'gatsby-typegen-remark-prismjs',

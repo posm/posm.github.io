@@ -16,6 +16,8 @@ $ yarn
 $ yarn run develop
 ```
 
+The dev site will be available at http://localhost:8000/
+
 ## Deploying to GitHub Pages
 
 ```bash

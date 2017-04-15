@@ -2,6 +2,7 @@
 
 $topbar-background: #fff;
 $topbar-hover-color: darken($topbar-background, 10%);
+$ifrcCorporateRed: #d33f49;
 
 .marketing-topbar {
   background: $topbar-background;
@@ -9,6 +10,7 @@ $topbar-hover-color: darken($topbar-background, 10%);
   font-weight: bold;
   z-index: 2;
   position: relative;
+  border-bottom: 1px solid #3e3e3e;
 
   @include clearfix;
 
@@ -43,108 +45,33 @@ $topbar-hover-color: darken($topbar-background, 10%);
 }
 
 div.content {
-  margin: 0 25px;
+  margin: 0 230px 0 115px;
 
-  img {
+  a.gatsby-resp-image-link {
     padding: 0 100px;
   }
 }
 
-.footer {
-  background: #333;
-  padding: 24px 0 10px;
+a {
+  color: $ifrcCorporateRed;
+  transition: color 0.2s;
+}
 
-  .design-border {
-    border-bottom: 1px solid #484848;
-    padding-bottom: 5px;
-    margin-bottom: 25px;
-  }
+a:hover {
+  color: $dark-gray;
+  text-decoration: none;
+}
 
-  .zurb-logo {
-    color: #858585;
-    font-weight: normal;
-    background: url('../images/footer-icons.png') no-repeat 0 3px;
-    padding: 23px 0 0 0 !important;
-    font-size: em-calc(16px);
-    display: inline-block;
-    width: 90px;
+footer {
+  background: #3e3e3e;
+  background-size: cover;
+  background-position: bottom;
+  min-height: 50px;
 
-    &:hover {
-      opacity: 0.8;
-    }
-  }
-
-  .zurb-links {
-    margin: 0;
-    display: inline-block;
-    padding-bottom: 0px;
-
-    li {
-      display: block;
-      float: left;
-      margin-left: 6px;
-      text-transform: uppercase;
-      font-weight: 700;
-      font-size: 0.75rem;
-    }
-
-    a {
-      color: #666;
-      padding: 3px 6px;
-
-      &:hover {
-        color: #777;
-      }
-    }
-  }
-
-  .copyright {
-    margin: 6px 0 0;
-    font-size: 0.75rem;
-    color: #666;
-  }
-
-  .home-social {
-    display: block;
-    float: right;
-    margin-bottom: 8px;
-
-    li {
-      list-style: none;
-      display: block;
-      float: left;
-      margin-left: 10px;
-
-      &:first-child {
-        margin-left: 0;
-      }
-    }
-
-    a {
-      display: block;
-      height: 50px;
-      width: 50px;
-      background: url('../images/social.png') no-repeat center 0;
-
-      &:hover {
-        opacity: 0.8;
-      }
-
-      &.twitter {
-        background-position: center 0;
-      }
-
-      &.youtube {
-        background: url('../images/youtube.png') no-repeat center 0;
-      }
-
-      &.facebook {
-        background-position: center -200px;
-      }
-
-      &.mail {
-        background-position: center -400px;
-      }
-    }
+  h6 {
+    color: #fefefe;
+    font-size: 12px;
+    margin: 25px 20px;
+    position: relative;
   }
 }

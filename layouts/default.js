@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router'
 import { prefixLink } from 'gatsby-helpers'
+import 'prismjs/themes/prism-solarizedlight.css'
 
 import posmLogo from 'images/posm.png'
 import 'css/styles.scss'
