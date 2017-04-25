@@ -4,11 +4,11 @@ const select = require(`unist-util-select`)
 const fs = require(`fs-extra`)
 const ExtractTextPlugin = require("extract-text-webpack-plugin")
 
-exports.createPages = ({ graphql, actionCreators }) => {
-  const { upsertPage } = actionCreators
+exports.createPages = ({ graphql, boundActionCreators }) => {
+  const { upsertPage } = boundActionCreators
 
   return new Promise((resolve, reject) => {
-    const page = path.resolve('templates/page.js')
+    const page = path.resolve('src/templates/page.js')
     graphql(`
       {
         allMarkdownRemark(limit: 1000) {
@@ -22,7 +22,7 @@ exports.createPages = ({ graphql, actionCreators }) => {
     `)
     .then(result => {
       if (result.errors) {
-        console.log(result.errors)
+        console.log('errors:', result.errors)
         resolve()
         // reject(result.errors)
       }
@@ -44,8 +44,8 @@ exports.createPages = ({ graphql, actionCreators }) => {
 }
 
 // Add custom url pathname for pages
-exports.onNodeCreate = ({ node, actionCreators, getNode }) => {
-  const { updateNode } = actionCreators
+exports.onNodeCreate = ({ node, boundActionCreators, getNode }) => {
+  const { updateNode } = boundActionCreators
 
   if (node.type === `File` && node.slug == null) {
     node.slug = `/${path.dirname(node.relativePath)}/`
@@ -64,7 +64,6 @@ exports.onNodeCreate = ({ node, actionCreators, getNode }) => {
 }
 
 exports.modifyWebpackConfig = ({ config, stage }) => {
-
   switch (stage) {
     case "develop":
       config.loader("sass", {

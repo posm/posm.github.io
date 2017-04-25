@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Component } from 'react'
 import Helmet from 'react-helmet'
 
 let stylesStr
@@ -10,7 +10,7 @@ if (process.env.NODE_ENV === `production`) {
   }
 }
 
-module.exports = React.createClass({
+export default class HTML extends Component {
   render () {
     const head = Helmet.rewind()
     let css
@@ -39,5 +39,5 @@ module.exports = React.createClass({
         </body>
       </html>
     )
-  },
-})
+  }
+}

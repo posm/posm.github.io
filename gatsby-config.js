@@ -7,19 +7,19 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/images`,
+        path: `${__dirname}/src/images`,
         name: 'images',
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/pages`,
+        path: `${__dirname}/src/pages`,
         name: 'pages',
       },
     },
-    `gatsby-parser-remark`,
-    `gatsby-parser-sharp`,
+    `gatsby-transformer-remark`,
+    `gatsby-transformer-sharp`,
     {
       resolve: `gatsby-typegen-remark`,
       options: {
