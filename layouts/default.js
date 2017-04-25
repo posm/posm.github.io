@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router'
 import { prefixLink } from 'gatsby-helpers'
 import 'prismjs/themes/prism-solarizedlight.css'
+import propTypes from 'prop-types';
 
 import posmLogo from 'images/posm.png'
 import 'css/styles.scss'
@@ -34,9 +35,9 @@ class DefaultLayout extends React.Component {
 }
 
 DefaultLayout.propTypes = {
-  children: React.PropTypes.any,
-  location: React.PropTypes.object,
-  route: React.PropTypes.object,
+  children: propTypes.any,
+  location: propTypes.object,
+  route: propTypes.object,
 }
 
 export default DefaultLayout

@@ -10,21 +10,30 @@ class PageRoute extends React.Component {
 
     console.log(post);
 
-    const { responsiveResolution: { src, srcSet } } = post.frontmatter.splash_image.children[0];
+    let src, srcSet;
+
+    const { frontmatter: { splash_image } } = post;
+
+    if (splash_image) {
+      src = splash_image.children[0].responsiveResolution.src;
+      srcSet = splash_image.children[0].responsiveResolution.srcSet;
+    }
 
     return (
       <div>
         <div className="content">
           <Helmet title={`${post.frontmatter.title} | ${siteTitle}`}/>
-          {post.frontmatter.title &&
-            <h1>{post.frontmatter.title}</h1>
-          }
           {post.frontmatter.splash_image &&
-            <img
-              className="hero"
-              src={src}
-              srcSet={srcSet}
-            />
+            <div className="hero-section" style={{ background: `url(${src}) center no-repeat` }}>
+              <div className="hero-section-text">
+                {post.frontmatter.title &&
+                  <h1>{post.frontmatter.title}</h1>
+                }
+                {post.frontmatter.splash_text &&
+                  <h6>{post.frontmatter.splash_text}</h6>
+                }
+              </div>
+            </div>
           }
           <div dangerouslySetInnerHTML={{ __html: post.html }} />
         </div>
@@ -55,7 +64,7 @@ export const pageQuery = `
         splash_image {
           children {
             ... on ImageSharp {
-              responsiveResolution(width: 800, height: 500) {
+              responsiveResolution(width: 800, height: 500, quality: 75) {
                 src
                 srcSet
               }

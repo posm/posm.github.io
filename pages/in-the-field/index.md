@@ -1,10 +1,10 @@
 ---
 title: In the Field
+splash_image: whiteman.jpg
+splash_text: Cruising the Land
 ---
 
 > Note: for the OMK walkthrough, I don't think the format of text, image, text works very well with cell phone screenshots - the page is too long and the sizing is weird. Instead, I think this part should be an embedded gallery (with text as caption on the bottom or off to the right) that viewers can click through. In which case, let's use most of the screenshots from your Foray Google album. This format would also be useful for Field Papers and possibly OMK server (?)
-
-![](https://i.imgur.com/kzcc19d.jpg)
 
 This section walks through the different POSM features: Editing OSM, Field Papers, OpenDataKit and OpenMapKit (including setting up mobile data collection on Android phones, OpenDroneMap, key downloads, and the admin interface.
 
@@ -19,13 +19,13 @@ Aside from the technology itself, there are a number of things that need to be c
 [Field Papers](http://fieldpapers.org/) creates a grid of atlas pages for an area which you can print off and use to walk around the target area and annotate the paper map with missing buildings, address points, and any other relevant features. Afterwards, you take a photo or scan each page and Field Papers will use the QR code on each atlas page to georeference the area - it will appear as a semi-transparent layer in iD editor or JOSM and you will need to digitally trace your edits into the existing OSM data. The process is largely self-explanatory and documented in the actual Field Papers app.
 
 Creating an atlas (we usually size these so that a single page is no larger than a few city blocks):
-![](https://i.imgur.com/Uec5t1x.jpg)
+![](fieldpapers_aoi.jpg)
 
 Example of atlas page (we print these in black and white to save money/ink):
-![](https://i.imgur.com/mRNp2A4.jpg)
+![](fieldpapers_atlas.jpg)
 
 Field Papers being used to record addresses in Dhaka, Bangladesh:
-![](https://i.imgur.com/3WYHffs.png)
+![](fieldpapers_dhaka.png)
 
 Field Papers has some great advantages. It's great in areas where there may be missing features (like buildings) that need to be added into OSM, or where you want maximum flexibility for what information you want to collect. We also use Field papers mapping in areas where security is a big concern and using smartphones would make volunteers targets for theft. The main disadvantage of Field Papers is that the data entry afterwards can be time-consuming, we often notice spelling mistakes or other inconsistencies afterwards that require more time to clean, and it can sometimes be difficult to enumerators to orient themselves into the space on the map. For this reason, we prefer using digital tools like OpenMapKit.
 
@@ -52,11 +52,11 @@ This is a [basic buildings form](https://docs.google.com/spreadsheets/d/11H4-mGY
 
 The "survey" tab contains a series of ODK question types, most of which are recorded in the background (e.g. start time, end time, date of survey, device ID, etc.). The "osm building tags" question tells  ODK to launch the OpenMapKit app and to move to the "osm" tab in the workbook and look for the "building_tags" question.
 
-![](https://i.imgur.com/lDDt8sk.png)
+![](odk_example.png)
 
 First, make any additions to the question types you need and what you want to call them. Then, move to the "osm" tab. Here's how it works:
 
-![](https://i.imgur.com/hgbMfnM.png)
+![](odk_explanation.png)
 
 What this looks like: an enumerator will open ODK to conduct a survey. After recording all the background information (start time, etc), ODK will hit the "osm" question type and prompt the user to launch OpenMapKit. At this point, the user will see a map interface with his/her GPS location and the OSM buildings/features surrounding him/her. When the user taps on a building, they will see all the OSM tags that currently exist for that building. They will then swipe through the survey, which contains one screen for each of the fields in the orange box (building, name, etc). Each of those fields will have pre-populated choices from the purple box. These correspond to OSM key:value pairs, but may be labeled differently in order to make sense to the user.
 
@@ -64,11 +64,11 @@ If you need help deciding what key:value pairs you need to record (and how to cl
 
 Once you've set up your ODK/OMK form, save it as a `.xls` or `.xlsx` (Excel) workbook. Access the posm.io homepage, navigate to OpenMapKit (where you'll see the existing forms and can access their submissions and the XLSX form that was used to create them). Click the three dots at the top-right of the screen and select "Upload form".
 
-![](https://i.imgur.com/mFKrtzq.png)
+![](omk.png)
 
 You can then drag and drop your ODK Excel form to upload it. When it's done, you'll see it added to the grid of forms in the main OpenMapKit Server menu.
 
-![](https://i.imgur.com/CCtlGRj.png)
+![](omk_upload.png)
 
 ### Using ODK/OMK on the phones
 
@@ -76,13 +76,15 @@ The first time you use a phone for a mobile data collection project, you have to
 
 First, make sure your phone is connected to the POSM wifi. Launch OpenDataKit (you always use OMK through ODK; you will never launch it from the OMK app). You'll see this menu:
 
-![](https://i.imgur.com/WFA9CuB.png)
+![](odk_collect.png)
 
 Tap the three dots at the top-right of the screen and select "General settings":
-![](https://i.imgur.com/3UmjUC9.png)
+
+![](odk_general_settings.png)
 
 We have to tell the ODK app to connect to the OMK server, where it will find all the forms and will upload its responses. To do this, tap "Platform settings", and you'll see this menu:
-![](https://i.imgur.com/RnFoN3E.png)
+
+![](odk_aggregate_settings.png)
 
 Set the URL to `http://posm.io`. You have to do this the first time you set up the phone; after that, it will remember where to point.
 
@@ -94,31 +96,31 @@ To use ODK, go to the ODK home screen and tap "Fill blank form", then select the
 
 You may see this screen when you launch OMK for the first time:
 
-![](https://i.imgur.com/8wfsd63.png)
+![](omk_error.png)
 
 This is because you need to load the deployment. Tap the gear icon at the top-right of the screen and select "Deployments". You should see a list of any deployments that are on your POSM (items get added to the list when you load a OSM export onto the POSM). Tap on the deployment you want to load, and you'll see a list of what files are available:
 
-![](https://i.imgur.com/gE0pv2f.png)
+![](omk_deployment_details.png)
 
 Tap the download button on the bottom-right to download all of these files. When the download has finished, tap on the map button on the bottom-right - you'll see a map of the deployment:
 
-![](https://i.imgur.com/M2uan8d.png)
+![](omk_map.png)
 
 You can zoom into the deployment to select a building and complete the OMK survey for it. (If you have any problems, tap the gear icon again and select "OSM XML Layers", and make sure your layers are turned on.) Tapping on a building will show the existing OSM data for that feature:
 
-![](https://i.imgur.com/oiA6K1v.png)
+![](omk_details.png)
 
 Press the tag button to complete the OMK survey, swiping through the different fields from the OMK form you prepared:
 
-![](https://i.imgur.com/8gPVucb.png)
+![](omk_tags.png)
 
 When you've finished, you'll be prompted to save the OMK data:
 
-![](https://i.imgur.com/jo4VY2W.png)
+![](omk_save.png)
 
 You will need to enter your OSM username for this. Then, back in ODK, you need to save the form and exit the survey:
 
-![](https://i.imgur.com/jaUoMLT.png)
+![](odk_save_form.png)
 
 Pressing this button completes the survey and saves the data locally. It will auto-send to the server when it connects to POSM, then delete the local copy.
 
@@ -126,7 +128,7 @@ Pressing this button completes the survey and saves the data locally. It will au
 
 If for some reason the completed forms do not automatically send to POSM, then you can push them manually. In the home screen for ODK, press the "Send finalized forms" button. There will be a number in parentheses which indicates how many unsent forms are on the device:
 
-![](https://i.imgur.com/CXRkwrl.png)
+![](odk_collect.png)
 
 ### Tying it all together
 

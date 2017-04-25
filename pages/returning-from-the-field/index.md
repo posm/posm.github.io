@@ -1,8 +1,8 @@
 ---
 title: Returning from the field
+splash_image: splash.jpg
+splash_text: Something something
 ---
-
-![](https://i.imgur.com/66y04Jb.jpg)
 
 When you've completely finished with a field project (or are returning to periodic internet use), the following steps need to happen:
 

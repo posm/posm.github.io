@@ -2,6 +2,8 @@
 title: Cloud Installation
 ---
 
+# Cloud Installation
+
 Interested in running POSM in the cloud? This type of setup is great for semi-connected instances when you want the integration of OpenMapKit/Field Papers/OSM but have more regular connectivity with your surveyors.
 
 First, this guide will walk through how to set things up in Amazon Web Services, specifically EC2. If you like another flavor or cloud services such as Azure, this process will still work but may look slightly different. This guide will also *not* show you how to get an AWS account, they already have great [documentation](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EC2_GetStarted.html).
@@ -10,19 +12,19 @@ First, this guide will walk through how to set things up in Amazon Web Services,
 
 Before installation, you should choose a domain name and host to use to access your new POSM and configure it with your DNS provider. If you don't do this, you won't be able to access the OpenStreetMap interface.
 
-Create the subdomain ``osm.example.org`` . You'll configure the DNS later.
+Create the subdomain `osm.example.org` . You'll configure the DNS later.
 
 
 ## Instance Setup
 
 The first thing you will need to do is start a new instance. In your AWS EC2 Dashboard click on Launch instance. Scroll all the way down and find Ubuntu 14.04 LTS. The posm-build process only works on Ubuntu 14.04 at this time.
 
-![](https://i.imgur.com/i7i2ogE.png)
+![](ec2_ami.png)
 
 
 After selecting your instance type you'll need to fill out a couple more things. Below are the recommended specs.
 
-![](https://i.imgur.com/nZG3h71.png)
+![](ec2_instance_type.png)
 
 Recomended specs for your intance are:
  * Ubuntu 14.04 ***mandatory***
@@ -78,7 +80,7 @@ The important things to edit are *posm_hostname* and *posm_domain*. Set these eq
 
 If you are not comfortable with editing files via command line here is a quick guide to using [vi](https://www.cs.colostate.edu/helpdocs/vi.html). The important thing is to hit ``i`` to edit and then after making changes hit ``ESC`` and then ``:`` and type ``wq`` to "write and quit"
 
-![](https://i.imgur.com/uSo3ZCU.png)
+![](settings.png)
 
 
 The last thing is to install everything. This will take a while; go get a snack and come back.
@@ -104,9 +106,9 @@ If the POSM cloud install was succesful, then you should now be able edit your O
 sudo vi /opt/omk/OpenMapKitServer/settings.js
 ```
 
-Your screen should looks something like this. **Notice the added comma after the last ``}`` for osmApi**
+Your screen should looks something like this. **Notice the added comma after the last `}` for osmApi**
 
-![](https://i.imgur.com/uNfakt8.jpg)
+![](omk_settings.jpg)
 
 After saving, just reboot your server and authentication should be working when you go to OMK Server.
 
@@ -114,4 +116,4 @@ After saving, just reboot your server and authentication should be working when 
 
 After everything is configured you can go to your domain and you should see the following screen.
 
-![](https://i.imgur.com/7yr7hfy.png)
+![](posm_home.png)

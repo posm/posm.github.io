@@ -2,6 +2,7 @@
 
 $topbar-background: #fff;
 $topbar-hover-color: darken($topbar-background, 10%);
+$hero-height: 550px;
 $ifrcCorporateRed: #d33f49;
 
 .marketing-topbar {
@@ -73,5 +74,34 @@ footer {
     font-size: 12px;
     margin: 25px 20px;
     position: relative;
+  }
+}
+
+.hero-section {
+  background-size: cover;
+  height: $hero-height;
+  position: relative;
+
+  .hero-section-text {
+    color: $white;
+    text-shadow: 1px 1px 2px $black;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin-left: 80px;
+    margin-bottom: 20px;
+  }
+}
+
+pre {
+  background-color: #eee;
+  border: 1px solid #999;
+  padding: 5px;
+  margin: 0 100px;
+
+  code {
+    background-color: transparent;
+    border: 0px;
+    font-size: 0.8em;
   }
 }

@@ -1,8 +1,8 @@
 ---
 title: Getting a POSM
+splash_image: hardware.jpg
+splash_text: Something pithy
 ---
-
-![](https://i.imgur.com/g8zAiqc.jpg)
 
 Interested in getting a POSM? This involves a little bit of DIY, but advanced tech skills are **not** required. This site has instructions that walk through the whole process.
 
@@ -51,7 +51,7 @@ On a Mac, plug in your USB stick and open Disk Utility. Navigate to the USB stic
 
 Give the USB stick a name. Set the format to `MS-DOS (FAT)` and the scheme to `GUID Partition Map`. Then click "Erase", which will delete all existing USB contents and reformat the drive to make it compatible with the POSM. See below:
 
-![](https://i.imgur.com/t7q3873.png)
+![](format.png)
 
 
 #### Windows
@@ -64,13 +64,13 @@ If you don't use command line, then moving the POSM download bundle involves dow
 
 On a Mac, open The Unarchiver and navigate to the `Extraction` tab. Where it says "Create a new folder for the extracted files", select `Never`. The reason we do this is because the POSM download has to be extracted and moved onto the USB stick. Most file extractors will place extracted files into an overall folder. The POSM unit can't handle this, and you can't just manually move everything one level up because there are hidden files that will get missed.
 
-![](https://i.imgur.com/KLh6rSV.png)
+![](extraction.png)
 
 Use your extraction client (The Unarchiver or 7-Zip) to extract the download (`posm-0.6.1.iso`) onto the USB stick... again, making sure that the files do not end up in an overall folder. On a Mac, you do this by right-clicking the `posm-0.6.1.iso` file and selecting `Open with...` ... `The Unarchiver`. Set the destination folder to the USB stick and press "Extract".
 
 The contents of your USB stick should look like this:
 
-![](https://i.imgur.com/KG4JJ7Y.png)
+![](finder.png)
 
 ### POSM first-time install
 
@@ -82,7 +82,8 @@ You'll see a boot screen appear on your monitor. Press `F10` when prompted. You'
 
 This will open a menu (see below) where you have to select which device to boot from. Use the arrow keys to select your USB stick, then hit enter.
 
-![](https://i.imgur.com/aWhXOPi.jpg)
+![](boot.jpg)
+
 [need: better version of this photo]
 
 That's it. The software will install onto the NUC unit, transforming it into a POSM. This takes a few minutes. When it's complete, you'll see the following screen and you can safely power down the POSM:

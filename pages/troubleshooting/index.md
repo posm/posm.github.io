@@ -2,6 +2,8 @@
 title: Troubleshooting
 ---
 
+# Troubleshooting
+
 Over the past year, we've noticed a few errors (or noticed ourselves making user errors) when using POSM. Here's a quick list of these issues and how to solve them.
 
 ### First-time POSM install fails
@@ -25,12 +27,12 @@ POSM sometimes has a hard time dealing with multiple deployments - it may strugg
 To do this, you will need to use an FTP client like [Cyberduck](https://cyberduck.io/?l=en) (or command line) to connect (or "SSH") into POSM.
 
 Power up the POSM and connect to it from your computer. Launch Cyberduck and start a new connection with the following parameters:
-* Type: SSH
-* Server: posm.local
-* Username: root
+* Type: `SSH`
+* Server: `posm.local`
+* Username: `root`
 * Password: (blank)
 
-![](https://i.imgur.com/jVbr0vE.png)
+![](cyberduck.png)
 
 The file structure looks like this: (needs completion + screenshot)
 
@@ -42,12 +44,12 @@ You can find a deployment...
 To do this, you will need to use an FTP client like [Cyberduck](https://cyberduck.io/?l=en) (or command line) to connect (or "SSH") into POSM.
 
 Power up the POSM and connect to it from your computer. Launch Cyberduck and start a new connection with the following parameters:
-* Type: SSH
-* Server: posm.local
-* Username: root
+* Type: `SSH`
+* Server: `posm.local`
+* Username: `root`
 * Password: (blank)
 
-![](https://i.imgur.com/jVbr0vE.png)
+![](cyberduck.png)
 
 The file structure looks like this: (needs completion + screenshot)
 
