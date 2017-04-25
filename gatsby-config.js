@@ -1,4 +1,5 @@
 module.exports = {
+  linkPrefix: '/',
   siteMetadata: {
     title: 'POSM - Portable OpenStreetMap',
   },
