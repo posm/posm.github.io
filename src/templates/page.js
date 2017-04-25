@@ -8,8 +8,6 @@ class PageRoute extends React.Component {
     const post = this.props.data.markdownRemark
     const siteTitle = get(this.props, 'data.site.siteMetadata.title')
 
-    console.log(post);
-
     let src, srcSet;
 
     const { frontmatter: { splash_image } } = post;
