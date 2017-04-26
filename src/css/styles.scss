@@ -58,6 +58,10 @@ a {
   transition: color 0.2s;
 }
 
+a.active {
+  background-color: #b6a8a9;
+}
+
 a:hover {
   color: $dark-gray;
   text-decoration: none;
