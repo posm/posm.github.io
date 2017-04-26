@@ -28,6 +28,7 @@
     "react-helmet": "^4.0.0",
     "safe-access": "^0.1.0",
     "sass-loader": "^6.0.3",
+    "sw-precache": "^5.1.0",
     "underscore.string": "^3.2.3"
   },
   "devDependencies": {
