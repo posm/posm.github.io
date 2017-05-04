@@ -87,7 +87,7 @@ Set the URL to `http://posm.io`. You have to do this the first time you set up t
 
 On the same "General settings" screen, scroll down to the options for "Auto send" and make sure that there is a check next to "Auto send with wifi" and **not** next to "Auto send with network". Since we're doing this offline, we only want the forms sent over the POSM wifi.
 
-Now that the server settings are right, go back to the ODK home screen and select "Get blank form". The app will connect to the OMK server on POSM and show you all the forms that have been uploaded. Only get the ones you need - otherwise your ennumerators may get confused later.
+Now that the server settings are right, go back to the ODK home screen and select "Get blank form". The app will connect to the OMK server on POSM and show you all the forms that have been uploaded. Only get the ones you need - otherwise your enumerators may get confused later.
 
 To use ODK, go to the ODK home screen and tap "Fill blank form", then select the form you want to complete. This launches the ODK survey and, in turn, prompts you to launch OpenMapKit.
 
@@ -146,7 +146,7 @@ We documented our [data cleaning workflow](https://github.com/AmericanRedCross/w
 Here's a short summary:
 
 1. Retrieve the `.osm` file from OMK server and open in JOSM. Enable the ToDoList and OpenData plug-ins for JOSM.
-2. Purge non-relevant features (features that don't need to be cleaned, or features outside a geographic area where you want to focus) using `CRTL+Shift+P`. **Do not delete these features**.
+2. Purge non-relevant features (features that don't need to be cleaned, or features outside a geographic area where you want to focus) using `CTRL+Shift+P`. **Do not delete these features**.
 3. Save the points and polygons as separate files.
 4. For point data: Clean any free-form text inputs. When entering data for things like hospital names, town names, etc, enumerators sometimes use different spelling of capitalization or include a typo. Use Open Refine to clean these columns individually. Open Refine looks for responses that are close but not exactly the same, and allows you to group these and change them to a consistent spelling. Once you're finished, export as a `.csv` file and re-open in JOSM (`File -> Open`, accept the coordinate system as WGS84). Make sure the points appear to be in the correct place, add a source tag to all your new features (e.g. `source=Red Cross field survey`), then push the changes to OSM.
 5. For polygon data: This is more tedious. Open Refine doesn't play nice with XML input, so in the past we've cleaned the individual records in JOSM. There's room here for scoping out other data cleaning services or scripts that might make it easier to convert from XML into a format that can be digested through Open Refine and back again. Once you've cleaned the polygons, add the source tag (see step 4), address any validation errors that occur, and push to OSM.
