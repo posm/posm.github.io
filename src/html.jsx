@@ -19,7 +19,7 @@ export default class HTML extends Component {
     }
 
     return (
-      <html lang="en">
+      <html lang="en" className="no-js">
         <head>
           <meta charSet="utf-8" />
           <meta httpEquiv="X-UA-Compatible" content="IE=edge" />

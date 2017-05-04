@@ -4,6 +4,7 @@ const select = require(`unist-util-select`)
 const precache = require(`sw-precache`)
 const fs = require(`fs-extra`)
 const ExtractTextPlugin = require("extract-text-webpack-plugin")
+const webpack = require('webpack')
 
 exports.createPages = ({ graphql, boundActionCreators }) => {
   const { upsertPage } = boundActionCreators
@@ -102,6 +103,12 @@ exports.modifyWebpackConfig = ({ config, stage }) => {
 
       break
   }
+
+  config.plugin('webpack-provide', webpack.ProvidePlugin, [{
+    $: 'jquery',
+    jQuery: 'jquery',
+    'window.jQuery': 'jquery'
+  }])
 
   return config
 }
