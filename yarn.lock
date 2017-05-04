@@ -3319,9 +3319,9 @@ gatsby-typegen-filesystem@1.0.0-alpha13:
   dependencies:
     unist-util-select "^1.5.0"
 
-gatsby-typegen-remark-copy-images@mojodna/gatsby-typegen-remark-copy-images#dist:
+"gatsby-typegen-remark-copy-images@https://github.com/mojodna/gatsby-typegen-remark-copy-images/tarball/dist":
   version "0.0.0"
-  resolved "https://codeload.github.com/mojodna/gatsby-typegen-remark-copy-images/tar.gz/495b044bba9ab028aea2bde45f61b1420d3604aa"
+  resolved "https://github.com/mojodna/gatsby-typegen-remark-copy-images/tarball/dist#3c53f30241e8635b0607dd1f86059dd5058bdd5b"
   dependencies:
     fs-extra "^1.0.0"
     is-relative-url "^2.0.0"
