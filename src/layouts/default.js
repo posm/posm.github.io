@@ -3,17 +3,10 @@ import Link from 'gatsby-link'
 import 'prismjs/themes/prism-solarizedlight.css'
 import propTypes from 'prop-types';
 
-import 'foundation-sites'
-
 import posmLogo from '../images/posm.png'
 import '../css/styles.scss'
 
 class DefaultLayout extends Component {
-  componentDidMount () {
-    // enable Foundation JS (but this may cause problems when fighting with React over control of elements)
-    $(window).foundation();
-  }
-
   render () {
     const { children } = this.props
 
