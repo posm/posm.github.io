@@ -1,20 +1,17 @@
 ---
 title: In the Field
 splash_image: whiteman.jpg
-splash_text: Cruising the Land
 ---
-
-> Note: for the OMK walkthrough, I don't think the format of text, image, text works very well with cell phone screenshots - the page is too long and the sizing is weird. Instead, I think this part should be an embedded gallery (with text as caption on the bottom or off to the right) that viewers can click through. In which case, let's use most of the screenshots from your Foray Google album. This format would also be useful for Field Papers and possibly OMK server (?)
 
 This section walks through the different POSM features: Editing OSM, Field Papers, OpenDataKit and OpenMapKit (including setting up mobile data collection on Android phones, OpenDroneMap, key downloads, and the admin interface.
 
 ## Planning fieldwork in general
 
-Aside from the technology itself, there are a number of things that need to be considered for mapping fieldwork: the size of the area, number of enumerators needed and time required, the data required and the data model for collecting it, etc. There's also a lot of nuance in teaching people (especially in other languages/cultures) how to use different mapping tools. There are a variety of resources (including presentation and training materials) on the [Missing Maps website](www.missingmaps.org) which may be useful. You can also reach out to the <a href="mailto:contact@redcross.org">American Red Cross GIS team</a> in advance and, if we have time, we may be able to talk through your project and provide suggestions from past experiences.
+Aside from the technology itself, there are a number of things that need to be considered for mapping fieldwork: the size of the area, number of enumerators needed and time required, the data required and the data model for collecting it, etc. There's also a lot of nuance in teaching people (especially in other languages/cultures) how to use different mapping tools. There are a variety of resources (including presentation and training materials) on the [Missing Maps website](www.missingmaps.org) which may be useful. You can also reach out to the <a href="mailto:contact@posm.io">American Red Cross GIS team</a> in advance and, if we have time, we may be able to talk through your project and provide suggestions from past experiences.
 
 ## Editing OSM
 
-## Paper-based field mapping (Field Papers)
+### Paper-based field mapping (Field Papers)
 
 [Field Papers](http://fieldpapers.org/) creates a grid of atlas pages for an area which you can print off and use to walk around the target area and annotate the paper map with missing buildings, address points, and any other relevant features. Afterwards, you take a photo or scan each page and Field Papers will use the QR code on each atlas page to georeference the area - it will appear as a semi-transparent layer in iD editor or JOSM and you will need to digitally trace your edits into the existing OSM data. The process is largely self-explanatory and documented in the actual Field Papers app.
 
@@ -29,11 +26,11 @@ Field Papers being used to record addresses in Dhaka, Bangladesh:
 
 Field Papers has some great advantages. It's great in areas where there may be missing features (like buildings) that need to be added into OSM, or where you want maximum flexibility for what information you want to collect. We also use Field papers mapping in areas where security is a big concern and using smartphones would make volunteers targets for theft. The main disadvantage of Field Papers is that the data entry afterwards can be time-consuming, we often notice spelling mistakes or other inconsistencies afterwards that require more time to clean, and it can sometimes be difficult to enumerators to orient themselves into the space on the map. For this reason, we prefer using digital tools like OpenMapKit.
 
-## Mobile data collection
+### Mobile data collection
 
 There's a variety of different apps and tools to support mobile data collection and mapping in the field. We prefer OpenDataKit (ODK) and OpenMapKit (OMK). We often find ourselves doing fieldwork where we have to collect the same pieces of information for all the buildings, schools, etc in an area, and OMK is designed to make this process fast and easy.
 
-### Setting up the phones
+#### Setting up the phones
 
 In terms of hardware, we use Blu Advance 5.0 phones. We’ve tried a lot of different phones in the field, and the Blu’s are our favourite so far - cheap, hardy, easy to use, and they have a reliable GPS signal.
 
@@ -44,7 +41,7 @@ POSM contains several other apps that can help with field mapping:
 * [OpenSignal](https://opensignal.com/). This runs in the background to record cell phone signal strength when the home screen is in use. You can download the data from the phones to see how the signal varied in your fieldwork area, and the data goes into OpenSignal's crowdsourcing database.)
 * [AppLock](https://play.google.com/store/apps/details?id=com.domobile.applock&hl=en). If you're providing the phones and/or SIM cards for fieldwork, then you may want to be able to control which apps can be used by enumerators and which cannot.
 
-### Setting up a form for OpenDataKit or OpenMapKit
+#### Setting up a form for OpenDataKit or OpenMapKit
 
 Before you can use OpenDataKit/OpenMapKit, you need a survey form. There's some documentation on the OpenDataKit website, but here's a working example as well:
 
@@ -124,7 +121,7 @@ You will need to enter your OSM username for this. Then, back in ODK, you need t
 
 Pressing this button completes the survey and saves the data locally. It will auto-send to the server when it connects to POSM, then delete the local copy.
 
-### Manually pushing data from phones to POSM
+#### Manually pushing data from phones to POSM
 
 If for some reason the completed forms do not automatically send to POSM, then you can push them manually. In the home screen for ODK, press the "Send finalized forms" button. There will be a number in parentheses which indicates how many unsent forms are on the device:
 
@@ -134,13 +131,13 @@ If for some reason the completed forms do not automatically send to POSM, then y
 
 Once you've walked through this workflow on the phones to set them up, then they are tested and ready for field use. You will need to complete and save an ODK/OMK form for every OSM feature that you survey, and can push these to the POSM during/after fieldwork.
 
-## Working with data collected through ODK/OMK
+### Working with data collected through ODK/OMK
 
-### Viewing data and submitting to OSM
+#### Viewing data and submitting to OSM
 
 Cleaning data: borrow from Matt's post: https://github.com/AmericanRedCross/workflows/blob/master/west-africa_data-cleaning.md
 
-### Cleaning data
+#### Cleaning data
 
 For large amounts of data, there are certain tools and processes that can streamline data cleaning.
 

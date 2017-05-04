@@ -1,7 +1,6 @@
 ---
 title: Returning from the field
 splash_image: splash.jpg
-splash_text: Something something
 ---
 
 When you've completely finished with a field project (or are returning to periodic internet use), the following steps need to happen:
@@ -11,7 +10,7 @@ When you've completely finished with a field project (or are returning to period
 
 ## POSM replay tool
 
-The POSM replay tool requires some command line knowledge and familiarity with GitHub. <a href="mailto:contact@posm.org">Reach out</a> if you get to this step and need some pointers.
+The POSM replay tool requires some command line knowledge and familiarity with GitHub. <a href="mailto:contact@posm.io">Reach out</a> if you get to this step and need some pointers.
 
 The complete instructions are [here](https://github.com/americanredcross/posm-replay-tool) and you can read more about the concepts and mechanics behind the process [here](https://hi.stamen.com/merging-offline-edits-with-the-posm-replay-tool-2f39a4410d2a#.47nht8th2).
 
@@ -20,7 +19,7 @@ In general, the replay process works as follows:
 1. Obtain an AOI extract (PBF or XML) corresponding to the point where the local OSM API branched from. (This is the PBF file you created through the AOI export and used to set up your POSM deployment )
 2. Gather local changesets.
 3. Initialize a git repository containing locally-modified entities present in the AOI extract.
-4. Obtain an AOI extract containing current data from your upstream (use export.posm.io and follow the same steps you did to create your POSM deloyment in the first place... but with current data).
+4. Obtain an AOI extract containing current data from your upstream (use export.posm.io and follow the same steps you did to create your POSM deployment in the first place... but with current data).
 5. Extract and apply changes to locally-modified entities from the current AOI extract.
 6. Create a branch representing the local history by applying all local changesets to a branch containing the starting AOI extract.
 7. Apply each local changeset to the branch containing the current AOI extract.

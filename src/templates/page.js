@@ -3,6 +3,8 @@ import Helmet from 'react-helmet'
 import { Link } from 'react-router'
 import get from 'lodash/get'
 
+import twitterLogo from '../images/twitter-logo.png'
+
 class PageRoute extends React.Component {
   render () {
     const post = this.props.data.markdownRemark
@@ -37,7 +39,11 @@ class PageRoute extends React.Component {
         </div>
         <footer>
          <div className="row small-12 large-up-5">
-          <h6>© 2016‐2017 American Red Cross. All rights reserved.</h6>
+           <h6>© 2016‐2017 American Red Cross. All rights reserved.
+             <span className="float-right"><a href="https://twitter.com/awesomeposm">
+               <img src={twitterLogo} />
+             </a></span>
+           </h6>
          </div>
         </footer>
       </div>

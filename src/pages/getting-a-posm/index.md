@@ -1,7 +1,6 @@
 ---
 title: Getting a POSM
 splash_image: hardware.jpg
-splash_text: Something pithy
 ---
 
 Interested in getting a POSM? This involves a little bit of DIY, but advanced tech skills are **not** required. This site has instructions that walk through the whole process.

@@ -1,10 +1,19 @@
 ---
 title: Troubleshooting
 ---
+<br />
+
+<br />
 
 # Troubleshooting
 
+<br />
+
 Over the past year, we've noticed a few errors (or noticed ourselves making user errors) when using POSM. Here's a quick list of these issues and how to solve them.
+
+<br />
+
+<br />
 
 ### First-time POSM install fails
 

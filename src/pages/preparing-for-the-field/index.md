@@ -1,7 +1,6 @@
 ---
 title: Preparing for the field
 splash_image: splash.jpg
-splash_text: Something pithy
 ---
 
 Now you have a POSM. The device has all the core software ready to go, and the next step is to create a "deployment" - this means downloading all the OpenStreetMap data and other resources for your area of interest (AOI). You should do this in an area with a stable internet connection - if you are traveling for fieldwork, we highly recommend doing this before you leave. POSM can handle relatively large deployments (entire districts and sometimes countries).

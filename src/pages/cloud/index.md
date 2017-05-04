@@ -2,11 +2,18 @@
 title: Cloud Installation
 ---
 
+<br />
+<br />
+
 # Cloud Installation
+
+<br />
 
 Interested in running POSM in the cloud? This type of setup is great for semi-connected instances when you want the integration of OpenMapKit/Field Papers/OSM but have more regular connectivity with your surveyors.
 
 First, this guide will walk through how to set things up in Amazon Web Services, specifically EC2. If you like another flavor or cloud services such as Azure, this process will still work but may look slightly different. This guide will also *not* show you how to get an AWS account, they already have great [documentation](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EC2_GetStarted.html).
+
+<br />
 
 ## Get a Fully Qualified Domain Name
 
@@ -73,7 +80,6 @@ git clone https://github.com/AmericanRedCross/posm-build
 
 # edit your settings (posm_hostname, posm_domain)
 vi posm-build/kickstart/etc/settings
-
 ```
 
 The important things to edit are *posm_hostname* and *posm_domain*. Set these equal to your hostname and domain that your purchased earlier. You can comfortably ignore all the wifi settings.
