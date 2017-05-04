@@ -48,8 +48,11 @@ $ifrcCorporateRed: #d33f49;
 div.content {
   margin: 0 230px 0 115px;
 
-  a.gatsby-resp-image-link {
-    padding: 0 100px;
+  img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 50px;
   }
 }
 

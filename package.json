@@ -14,6 +14,7 @@
     "gatsby-transformer-sharp": "1.0.0-alpha13",
     "gatsby-typegen-filesystem": "1.0.0-alpha13",
     "gatsby-typegen-remark": "1.0.0-alpha13",
+    "gatsby-typegen-remark-copy-images": "mojodna/gatsby-typegen-remark-copy-images#dist",
     "gatsby-typegen-remark-copy-linked-files": "1.0.0-alpha13",
     "gatsby-typegen-remark-prismjs": "1.0.0-alpha13",
     "gatsby-typegen-remark-responsive-image": "1.0.0-alpha13",

@@ -3319,6 +3319,15 @@ gatsby-typegen-filesystem@1.0.0-alpha13:
   dependencies:
     unist-util-select "^1.5.0"
 
+gatsby-typegen-remark-copy-images@mojodna/gatsby-typegen-remark-copy-images#dist:
+  version "0.0.0"
+  resolved "https://codeload.github.com/mojodna/gatsby-typegen-remark-copy-images/tar.gz/495b044bba9ab028aea2bde45f61b1420d3604aa"
+  dependencies:
+    fs-extra "^1.0.0"
+    is-relative-url "^2.0.0"
+    lodash "^4.17.4"
+    unist-util-visit "^1.1.1"
+
 gatsby-typegen-remark-copy-linked-files@1.0.0-alpha13:
   version "1.0.0-alpha13"
   resolved "https://registry.yarnpkg.com/gatsby-typegen-remark-copy-linked-files/-/gatsby-typegen-remark-copy-linked-files-1.0.0-alpha13.tgz#a316788677ba176bb69877d7d9f1def4af5f9362"
@@ -3752,11 +3761,11 @@ got@^6.7.1:
     unzip-response "^2.0.1"
     url-parse-lax "^1.0.0"
 
-graceful-fs@4.1.10, graceful-fs@^4.0.0, graceful-fs@^4.1.2, graceful-fs@^4.1.3, graceful-fs@^4.1.4, graceful-fs@^4.1.6, graceful-fs@^4.1.9:
+graceful-fs@4.1.10, graceful-fs@^4.1.2, graceful-fs@^4.1.4, graceful-fs@^4.1.6, graceful-fs@^4.1.9:
   version "4.1.10"
   resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.1.10.tgz#f2d720c22092f743228775c75e3612632501f131"
 
-graceful-fs@^4.1.11:
+graceful-fs@^4.0.0, graceful-fs@^4.1.11, graceful-fs@^4.1.3:
   version "4.1.11"
   resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.1.11.tgz#0e8bdfe4d1ddb8854d64e04ea7c00e2a026e5658"
 
