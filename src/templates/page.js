@@ -53,14 +53,14 @@ class PageRoute extends React.Component {
 
 export default PageRoute
 
-export const pageQuery = `
+export const pageQuery = graphql`
   query PagesPath($slug: String!) {
     site {
       siteMetadata {
         title
       }
     }
-    markdownRemark(slug: { eq: $slug }) {
+    markdownRemark(fields: { slug: { eq: $slug } }) {
       id
       html
       frontmatter {

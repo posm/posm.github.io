@@ -6,17 +6,15 @@ const fs = require(`fs-extra`)
 const ExtractTextPlugin = require("extract-text-webpack-plugin")
 const webpack = require('webpack')
 
-exports.createPages = ({ graphql, boundActionCreators }) => {
-  const { upsertPage } = boundActionCreators
-
+exports.createPages = ({ graphql, boundActionCreators: { createPage } }) => {
   return new Promise((resolve, reject) => {
     const page = path.resolve('src/templates/page.js')
     graphql(`
-      {
+      query PageQuery {
         allMarkdownRemark(limit: 1000) {
           edges {
             node {
-              slug
+              fields { slug }
             }
           }
         }
@@ -24,19 +22,18 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
     `)
     .then(result => {
       if (result.errors) {
-        reject(result.errors)
+        return reject(result.errors)
       }
 
-      // Create pages.
       result.data.allMarkdownRemark.edges.map(edge => (
         {
-          path: edge.node.slug, // required
+          path: edge.node.fields.slug, // required
           component: page,
           context: {
-            slug: edge.node.slug,
+            slug: edge.node.fields.slug,
           },
         }
-      )).forEach(page => upsertPage(page))
+      )).forEach(page => createPage(page))
 
       resolve()
     })
@@ -44,64 +41,24 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
 }
 
 // Add custom url pathname for pages
-exports.onNodeCreate = ({ node, boundActionCreators, getNode }) => {
-  const { updateNode } = boundActionCreators
+exports.onCreateNode = ({ node, boundActionCreators: { createNodeField }, getNode }) => {
 
-  if (node.type === `File` && node.slug == null) {
-    node.slug = `/${path.dirname(node.relativePath)}/`
-
-    updateNode(node)
-  } else if (node.type === `MarkdownRemark` && node.slug == null) {
-    const fileNode = getNode(node.parent)
-    node.slug = fileNode.slug
-
-    if (node.frontmatter.path != null) {
-      node.slug = node.frontmatter.path
-    }
-
-    updateNode(node)
+  if (node.internal.type === `File`) {
+    createNodeField({
+      node,
+      fieldName: "slug",
+      fieldValue: `/${path.dirname(node.relativePath)}/`
+    })
+  } else if (node.internal.type === `MarkdownRemark`) {
+    createNodeField({
+      node,
+      fieldName: "slug",
+      fieldValue: node.frontmatter.path || getNode(node.parent).fields.slug
+    })
   }
 }
 
 exports.modifyWebpackConfig = ({ config, stage }) => {
-  switch (stage) {
-    case "develop":
-      config.loader("sass", {
-        test: /\.(sass|scss)$/,
-        exclude: /\.module\.(sass|scss)$/,
-        loaders: ["style", "css", "postcss", "sass"],
-      })
-
-      break
-
-    case "build-css":
-      config.loader("sass", {
-        test: /\.(sass|scss)$/,
-        exclude: /\.module\.(sass|scss)$/,
-        loader: ExtractTextPlugin.extract(["css?minimize", "postcss", "sass"]),
-      })
-
-      break
-
-    case "build-html":
-      config.loader("sass", {
-        test: /\.(sass|scss)$/,
-        exclude: /\.module\.(sass|scss)$/,
-        loader: "null",
-      })
-
-      break
-
-    case "build-javascript":
-      config.loader("sass", {
-        test: /\.(sass|scss)$/,
-        exclude: /\.module\.(sass|scss)$/,
-        loader: "null",
-      })
-
-      break
-  }
-
   config.plugin('webpack-provide', webpack.ProvidePlugin, [{
     $: 'jquery',
     jQuery: 'jquery',

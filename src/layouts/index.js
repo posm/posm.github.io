@@ -71,7 +71,7 @@ class DefaultLayout extends Component {
             </li>
           </ul>
         </nav>
-        {children}
+        {children()}
       </div>
     )
   }

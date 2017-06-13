@@ -4,6 +4,7 @@ module.exports = {
     title: 'POSM - Portable OpenStreetMap',
   },
   plugins: [
+    `gatsby-plugin-postcss-sass`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -18,21 +19,18 @@ module.exports = {
         name: 'pages',
       },
     },
-    `gatsby-transformer-remark`,
     `gatsby-transformer-sharp`,
     {
-      resolve: `gatsby-typegen-remark`,
+      resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
-          'gatsby-typegen-remark-prismjs',
-          'gatsby-typegen-remark-copy-images',
-          'gatsby-typegen-remark-copy-linked-files',
-          'gatsby-typegen-remark-smartypants',
+          'gatsby-remark-prismjs',
+          'gatsby-remark-copy-images',
+          'gatsby-remark-copy-linked-files',
+          'gatsby-remark-smartypants',
         ],
       },
     },
-    `gatsby-typegen-filesystem`,
-    `gatsby-typegen-sharp`,
-    `gatsby-plugin-sharp`,
+    `gatsby-plugin-sharp`
   ],
 }

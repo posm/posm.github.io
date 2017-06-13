@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import Helmet from 'react-helmet'
 
 let stylesStr
 if (process.env.NODE_ENV === `production`) {
@@ -12,7 +11,6 @@ if (process.env.NODE_ENV === `production`) {
 
 export default class HTML extends Component {
   render () {
-    const head = Helmet.rewind()
     let css
     if (process.env.NODE_ENV === `production`) {
       css = <style id="gatsby-inlined-css" dangerouslySetInnerHTML={{ __html: stylesStr }} />
@@ -29,12 +27,9 @@ export default class HTML extends Component {
           />
           {this.props.headComponents}
           {css}
-          {head.title.toComponent()}
-          {head.meta.toComponent()}
-          {head.link.toComponent()}
         </head>
         <body>
-          <div id="react-mount" dangerouslySetInnerHTML={{ __html: this.props.body }} />
+          <div id="___gatsby" dangerouslySetInnerHTML={{ __html: this.props.body }} />
           {this.props.postBodyComponents}
         </body>
       </html>
