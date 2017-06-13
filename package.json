@@ -40,6 +40,7 @@
     "develop": "gatsby develop",
     "build": "gatsby build",
     "deploy": "gatsby build && gh-pages -d public -b master",
-    "build-guide": "rm -rf guide && LINK_PREFIX=/guide gatsby build --prefix-links && mv public guide"
+    "build-guide": "rm -rf guide && LINK_PREFIX=/guide gatsby build --prefix-links && mv public guide",
+    "deploy-guide": "npm run build-guide && gh-pages -d guide -b guide"
   }
 }
