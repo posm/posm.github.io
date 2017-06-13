@@ -1,5 +1,5 @@
 module.exports = {
-  linkPrefix: '/',
+  linkPrefix: process.env.LINK_PREFIX || '/',
   siteMetadata: {
     title: 'POSM - Portable OpenStreetMap',
   },
