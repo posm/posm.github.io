@@ -16,6 +16,7 @@ Aside from the technology itself, there are a number of things that need to be c
 [Field Papers](http://fieldpapers.org/) creates a grid of atlas pages for an area which you can print off and use to walk around the target area and annotate the paper map with missing buildings, address points, and any other relevant features. Afterwards, you take a photo or scan each page and Field Papers will use the QR code on each atlas page to georeference the area - it will appear as a semi-transparent layer in iD editor or JOSM and you will need to digitally trace your edits into the existing OSM data. The process is largely self-explanatory and documented in the actual Field Papers app.
 
 Creating an atlas (we usually size these so that a single page is no larger than a few city blocks):
+
 ![](fieldpapers_aoi.jpg)
 
 Example of atlas page (we print these in black and white to save money/ink):
@@ -90,6 +91,8 @@ On the same "General settings" screen, scroll down to the options for "Auto send
 Now that the server settings are right, go back to the ODK home screen and select "Get blank form". The app will connect to the OMK server on POSM and show you all the forms that have been uploaded. Only get the ones you need - otherwise your enumerators may get confused later.
 
 To use ODK, go to the ODK home screen and tap "Fill blank form", then select the form you want to complete. This launches the ODK survey and, in turn, prompts you to launch OpenMapKit.
+
+<div style="left: 0; width: 100%; height: 0; position: relative; padding-bottom: 83.9419%;"><iframe src="//speakerdeck.com/player/62524c40045f42d1a40e741c842dcf71" style="border: 0; top: 0; left: 0; width: 100%; height: 100%; position: absolute;" allowfullscreen scrolling="no"></iframe></div>
 
 You may see this screen when you launch OMK for the first time:
 
