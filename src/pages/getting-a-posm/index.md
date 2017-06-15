@@ -43,7 +43,7 @@ core POSM software, all of the tools that POSM supports, and other
 downloads/apps to support mapping and mobile data collection.
 
 The POSM download is
-[here](https://posm.s3.amazonaws.com/releases/posm-0.6.1.iso) and instructions
+[here](https://posm.s3.amazonaws.com/releases/posm-0.7.0.iso) and instructions
 are in the following section.
 
 For developers: the POSM software is free, open-source, and available through
@@ -66,8 +66,8 @@ of interest onto the POSM and set it up for the field.
 ## First-time install
 
 First, download the [core POSM
-software](https://posm.s3.amazonaws.com/releases/posm-0.6.1.iso). This will
-download with the file name `posm-0.6.1.iso`. You need to move that onto a USB
+software](https://posm.s3.amazonaws.com/releases/posm-0.7.0.iso). This will
+download with the file name `posm-0.7.0.iso`. You need to move that onto a USB
 stick and extract it into a set of folders, but first you'll have to change the
 USB formatting (UEFI booting is the technical term for what's being
 facilitated).
@@ -107,9 +107,9 @@ everything one level up because there are hidden files that will get missed.
 ![](extraction.png)
 
 Use your extraction client (The Unarchiver or 7-Zip) to extract the download
-(`posm-0.6.1.iso`) onto the USB stick... again, making sure that the files do
+(`posm-0.7.0.iso`) onto the USB stick... again, making sure that the files do
 not end up in an overall folder. On a Mac, you do this by right-clicking the
-`posm-0.6.1.iso` file and selecting `Open with...` ... `The Unarchiver`. Set the
+`posm-0.7.0.iso` file and selecting `Open with...` ... `The Unarchiver`. Set the
 destination folder to the USB stick and press "Extract".
 
 The contents of your USB stick should look like this:
