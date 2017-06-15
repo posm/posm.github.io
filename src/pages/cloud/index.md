@@ -79,42 +79,84 @@ apt update && apt install --no-install-recommends -y git
 git clone https://github.com/AmericanRedCross/posm-build
 
 # edit your settings (posm_hostname, posm_domain)
-vi posm-build/kickstart/etc/settings
+sensible-editor posm-build/kickstart/etc/settings
 ```
 
 The important things to edit are *posm_hostname* and *posm_domain*. Set these equal to your hostname and domain that your purchased earlier. You can comfortably ignore all the wifi settings.
 
-If you are not comfortable with editing files via command line here is a quick guide to using [vi](https://www.cs.colostate.edu/helpdocs/vi.html). The important thing is to hit ``i`` to edit and then after making changes hit ``ESC`` and then ``:`` and type ``wq`` to "write and quit"
-
-![](settings.png)
+```bash
+# network
+posm_network="172.16" # class B
+posm_wlan_subnet="$posm_network.1"
+posm_lan_subnet="$posm_network.2"
+posm_wlan_ip="$posm_wlan_subnet.1"
+posm_lan_ip="$posm_lan_subnet.1"
+posm_wan_netif="eth0"
+posm_lan_netif=""
+posm_wlan_netif="wlan0"
+posm_ssid="POSM"
+posm_wpa_passphrase="awesomeposm" # 8..63 characters
+posm_wifi_channel="1"
+posm_wifi_80211n="1" # set to 0 to disable 802.11n
+posm_wifi_wpa="2" # set to 0 to disable passwords
+posm_hostname="posm"
+posm_domain="io"
+lan_domain="lan"
+posm_fqdn="${posm_hostname}.${posm_domain}"
+osm_fqdn="osm.${posm_fqdn}"
+```
 
 
 The last thing is to install everything. This will take a while; go get a snack and come back.
 
+```bash
+/root/posm-build/kickstart/scripts/bootstrap.sh base virt nodejs ruby gis \
+  mysql postgis nginx osm fieldpapers docker omk tl carto tessera admin
 ```
-/root/posm-build/kickstart/scripts/bootstrap.sh base virt nodejs ruby gis mysql postgis nginx osm fieldpapers omk tl carto tessera admin
-```
+
 The above command will install everything needed to run POSM Cloud but *will not install* OpenDroneMap.
 
 To add SuperPOSM capabilities (OpenDroneMap + GeoTIFF processing), use the following instead.
 
-```
-/root/posm-build/kickstart/scripts/bootstrap.sh base virt nodejs ruby gis mysql postgis nginx osm fieldpapers omk tl carto tessera admin docker redis opendronemap imagery
+```bash
+/root/posm-build/kickstart/scripts/bootstrap.sh base virt nodejs ruby gis \
+  mysql postgis nginx osm fieldpapers docker omk tl carto tessera admin \
+  redis opendronemap imagery
 ```
 
 ## OMK Server Settings
 
-OpenMapKit server does not apply authintification out of the box; you will need to set it up to ensure that sensitive information cannot be viewed on your cloud instance. This step requires more command line knowledge.
+OpenMapKit server does not apply authentication out of the box; you will need to set it up to ensure that sensitive information cannot be viewed on your cloud instance. This step requires more command line knowledge.
 
-If the POSM cloud install was succesful, then you should now be able edit your OMK server settings. You will need to uncomment the lines starting with "auth" and add in the credentials you would like.
+If the POSM cloud install was successful, then you should now be able edit your OMK server settings. You will need to uncomment the lines starting with "auth" and add in the credentials you would like.
 
 ```
-sudo vi /opt/omk/OpenMapKitServer/settings.js
+sudo sensible-editor /opt/omk/OpenMapKitServer/settings.js
 ```
 
 Your screen should looks something like this. **Notice the added comma after the last `}` for osmApi**
 
-![](omk_settings.jpg)
+```javascript
+module.exports = {
+    name: 'OpenMapKit Server',
+    description: 'OpenMapKit Server is the lightweight server component of OpenMapKit that handles the collection and aggregation of OpenStreetMap and OpenDataKit data.',
+    port: 3210,
+    dataDir: __dirname + '/data',
+    pagesDir: __dirname + '/pages',
+    hostUrl: 'http://posm.io',
+    osmApi: {
+        server: 'http://osm.posm.io',
+        user: 'POSM',
+        pass: ''
+    },
+
+    // To do simple authentication, you can have an object like so:
+    auth: {
+        user: 'username',
+        pass: 'password'
+    }
+};
+```
 
 After saving, just reboot your server and authentication should be working when you go to OMK Server.
 
