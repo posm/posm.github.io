@@ -180,24 +180,22 @@ As part of our commitment to responsible data management, the American Red Cross
 1. Download [ODK Briefcase](https://opendatakit.org/use/briefcase/). The application is a `.jar` file. Put this somewhere handy.
 2. Download dependencies. There are instructions for this on the [ODK encrypted forms page](https://opendatakit.org/help/encrypted-forms). Under Configuration, look for the Java Cryptography Extension package (currently available [here](http://www.oracle.com/technetwork/java/javase/downloads/index.html)). Download this package.
 
-<figure>
 ![JCE package to download](odk-encryption-pic1.png)
-<p class="caption">JCE package to download</p>
-</figure>
+
+JCE package to download
 
 3. Unzip the JCE package that you just downloaded. Open the folder it creates. You should see three files, shown in the screenshot below. Copy these files. You will need to paste them to another location.
 
-<figure>
-![](odk-encryption-pic2.png)
-<p class="caption">(Copy these files to paste elsewhere)</p>
-</figure>
+![(Copy these files to paste elsewhere)](odk-encryption-pic2.png)
+
+(Copy these files to paste elsewhere)
+
 
 4. Navigate to your internet plug-ins. On a Mac, this will generally be `Macintosh HD/Library/Internet Plug-ins/`. You should see a file called `JavaAppletPlugin.plugin`. Right-click this file and select `Show package contents`. In the new directory that appears, navigate to `Contents/home/lib/security`. Paste the JCE files (that you copied in Step 3) into this directory.
 
-<figure>
-![](odk-encryption-pic3.png)
-<p class="caption">(Paste the JCE files here)</p>
-</figure>
+![Paste the JCE files here](odk-encryption-pic3.png)
+
+(Paste the JCE files here)
 
 #### Creating public and private keys, creating encrypted ODK form
 
@@ -213,10 +211,9 @@ To create a public and private key pair:
 4. Navigate to the public key you just created. Open it in a text editor and copy the text.
 5. In your XLS form, go to the `Settings` tab. If you don't already have a Settings tab, then create one. You need to have a column titled `public_key`. Paste the text from your public key file into this column. You can then use the XLS form to create your ODK survey and load it onto mobile devices.
 
-<figure>
-![](odk-encryption-pic4.png)
-<p class="caption">(Add public key to XLS form)</p>
-</figure>
+![Add public key to XLS form](odk-encryption-pic4.png)
+
+(Add public key to XLS form)
 
 #### Decrypting data
 
@@ -228,10 +225,7 @@ On omkserver, encrypted data will be a random string of text. You have to downlo
 2. Under the "Pull" tab, select the type of server (ODK Aggregate 1.0) and the server url (http://posm.io). Connect to this server and select the forms to fetch.
 3. Under the "Export" tab, select the form, the export type, the export directory, and the PEM private key file to use for decryption. This will give you a directory with results and attachments.
 
-<figure>
-![](odk-encryption-pic5.png)
-<p class="caption">Exporting the data</p>
-</figure>
+![Exporting the data](odk-encryption-pic5.png)
 
 
 #### Working with data collected through ODK/OMK
