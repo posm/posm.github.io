@@ -3151,9 +3151,9 @@ gatsby-plugin-sharp@1.0.0-alpha.22:
     qs "^6.3.0"
     sharp "^0.17.3"
 
-"gatsby-remark-copy-images@https://github.com/mojodna/gatsby-remark-copy-images/tarball/d4bdb74":
+"gatsby-remark-copy-images@https://github.com/mojodna/gatsby-remark-copy-images/tarball/fedaa77":
   version "0.0.0"
-  resolved "https://github.com/mojodna/gatsby-remark-copy-images/tarball/d4bdb74#a82097d412ee9b223bd7fea6050a67e54ad9f79a"
+  resolved "https://github.com/mojodna/gatsby-remark-copy-images/tarball/fedaa77#971197a5dd9de33fc668a3d90f8ba092a3e15ad3"
   dependencies:
     fs-extra "^1.0.0"
     is-relative-url "^2.0.0"
