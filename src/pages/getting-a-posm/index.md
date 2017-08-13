@@ -112,7 +112,13 @@ not end up in an overall folder. On a Mac, you do this by right-clicking the
 `posm-0.7.2.iso` file and selecting `Open with...` ... `The Unarchiver`. Set the
 destination folder to the USB stick and press "Extract".
 
-The contents of your USB stick should look like this:
+As an alternative to The Unarchiver, on a Mac you can install `7z` with homebrew and then use it to extract the contents:
+```
+brew install p7zip
+7z x path/to/posm-0.7.2.iso -o/Volumes/NAME_OF_USB
+```
+
+Regardless of the extraction method, the contents of your USB stick should look like this:
 
 ![](finder.png)
 
