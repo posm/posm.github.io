@@ -136,7 +136,7 @@ If you miss it, then just turn the power off and try again.
 This will open a menu (see below) where you have to select which device to boot
 from. Use the arrow keys to select your USB stick, then hit enter.
 
-![](boot.jpg)
+![](bootscreen.jpg)
 
 You'll be prompted by a screen that says GNU GRUB at the top and asks if you
 want to do an automated install. You do. You can also wait 10 seconds and it
