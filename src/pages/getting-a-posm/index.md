@@ -145,7 +145,7 @@ Finally, the screen will look like this when the whole process is complete. You
 can now power-down the POSM, disconnect the USB stick and keyboard and monitor.
 It is set up and ready for use.
 
-![][logged-in.png]
+![](logged-in.png)
 
 Reminder: you only need to do this the very first time you take your POSM out of
 its cardboard box and set it up (or upgrade the core POSM software). After that,
