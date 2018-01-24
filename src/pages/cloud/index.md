@@ -43,7 +43,7 @@ Recomended specs for your intance are:
  * Open ports 22 and 80
      * 22 is needed to SSH into the server for administration and setup
      * 80 is needed to view the various resources
- * Our internal instance runs on a t3.medium with 8GB of RAM
+ * Our internal instance runs on a t2.large
 
 ## Configure DNS
 
