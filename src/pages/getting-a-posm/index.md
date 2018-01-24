@@ -67,8 +67,8 @@ of interest onto the POSM and set it up for the field.
 
 First, download the [core POSM
 software](https://posm.s3.amazonaws.com/releases/posm-0.7.2.iso). This will
-download with the file name `posm-0.7.2.iso`. You need to move that onto a USB
-stick and extract it into a set of folders, but first you'll have to change the
+download with the file name `posm-0.7.2.iso`. You'll need to extract it into 
+a set of folders on your USB, but first you'll have to change the
 USB formatting (UEFI booting is the technical term for what's being
 facilitated).
 
@@ -107,15 +107,17 @@ everything one level up because there are hidden files that will get missed.
 ![](extraction.png)
 
 Use your extraction client (The Unarchiver or 7-Zip) to extract the download
-(`posm-0.7.2.iso`) onto the USB stick... again, making sure that the files do
+(`posm-0.7.2.iso`) from your computer onto the USB stick... again, making sure that the files do
 not end up in an overall folder. On a Mac, you do this by right-clicking the
 `posm-0.7.2.iso` file and selecting `Open with...` ... `The Unarchiver`. Set the
-destination folder to the USB stick and press "Extract".
+destination folder to the USB stick and press "Extract". If you don't see the option in
+the right-click menu, then open The Unarchiver app and go to `File` then select `Unarchive To...` and
+first select the iso file and then select the USB drive.
 
 As an alternative to The Unarchiver, on a Mac you can install `7z` with homebrew and then use it to extract the contents:
 ```
 brew install p7zip
-7z x path/to/posm-0.7.2.iso -o/Volumes/NAME_OF_USB
+7z x PATH/TO/FILE/posm-0.7.2.iso -o/Volumes/NAME_OF_USB
 ```
 
 Regardless of the extraction method, the contents of your USB stick should look like this:
