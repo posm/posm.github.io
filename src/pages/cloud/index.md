@@ -70,7 +70,7 @@ To configure POSM on your cloud host, [connect to it](http://docs.aws.amazon.com
 sudo -i
 
 # update instance for security patches
-apt-get install update && apt-get install upgrade
+apt-get update && apt-get upgrade
 
 # install git if necessary
 apt update && apt install --no-install-recommends -y git
