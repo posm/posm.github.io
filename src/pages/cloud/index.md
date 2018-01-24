@@ -131,30 +131,44 @@ OpenMapKit server does not apply authentication out of the box; you will need to
 If the POSM cloud install was successful, then you should now be able edit your OMK server settings. You will need to uncomment the lines starting with "auth" and add in the credentials you would like.
 
 ```
-sudo sensible-editor /opt/omk/OpenMapKitServer/settings.js
+sudo sensible-editor /etc/omk-server.js 
 ```
 
-Your screen should looks something like this. **Notice the added comma after the last `}` for osmApi**
-
+Your screen should looks something like this. 
 ```javascript
 module.exports = {
-    name: 'OpenMapKit Server',
-    description: 'OpenMapKit Server is the lightweight server component of OpenMapKit that handles the collection and aggregation of OpenStreetMap and OpenDataKit data.',
-    port: 3210,
-    dataDir: __dirname + '/data',
-    pagesDir: __dirname + '/pages',
-    hostUrl: 'http://posm.io',
-    osmApi: {
-        server: 'http://osm.posm.io',
-        user: 'POSM',
-        pass: ''
-    },
-
-    // To do simple authentication, you can have an object like so:
-    auth: {
-        user: 'username',
-        pass: 'password'
-    }
+  name: 'OpenMapKit Server',
+  description: 'OpenMapKit Server',
+  port: 3210,
+  dataDir: __dirname + '/data',
+  pagesDir: __dirname + '/pages',
+  hostUrl: 'http://omkserver.com',
+  osmApi: {
+      server: 'http://osm.omkserver.com',
+      user: 'POSM',
+      pass: ''
+  }
+};
+```
+You'll need to change it to look something like this. **Notice the added comma after the last `}` for osmApi**
+```javascript
+module.exports = {
+  name: 'OpenMapKit Server',
+  description: 'OpenMapKit Server',
+  port: 3210,
+  dataDir: __dirname + '/data',
+  pagesDir: __dirname + '/pages',
+  hostUrl: 'http://omkserver.com',
+  osmApi: {
+      server: 'http://osm.omkserver.com',
+      user: 'POSM',
+      pass: ''
+  },
+  // To do simple authentication, you can have an object like so:
+  auth: {
+      user: 'username',
+      pass: 'password'
+  }
 };
 ```
 
