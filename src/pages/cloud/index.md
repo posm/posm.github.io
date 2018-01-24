@@ -82,7 +82,7 @@ git clone https://github.com/AmericanRedCross/posm-build
 sensible-editor posm-build/kickstart/etc/settings
 ```
 
-The important things to edit are *posm_hostname* and *posm_domain*. Set these equal to your hostname and domain that your purchased earlier. You can comfortably ignore all the wifi settings.
+The important things to edit are *posm_hostname* and *posm_domain*. Set these equal to your hostname and domain that your purchased earlier. You can comfortably ignore all the wifi settings. You can enable basic auth for the whole site by uncommenting the `auth=true` on line 42 and editing the user and password to the desired values.
 
 ```bash
 # network
@@ -104,6 +104,13 @@ posm_domain="io"
 lan_domain="lan"
 posm_fqdn="${posm_hostname}.${posm_domain}"
 osm_fqdn="osm.${posm_fqdn}"
+
+...
+
+# web
+# auth=true # uncomment this to enable web authentication
+auth_user=POSM
+auth_password=awesomeposm
 ```
 
 
