@@ -14,7 +14,7 @@ countries).
 ## Creating an AOI deployment
 
 On your computer, when connected to the internet, navigate in your browser to
-[the POSM export tool](http://export.posm.io/en/). This site will allow you to
+[the POSM export tool](https://export.hotosm.org/). This site will allow you to
 select a geographic area and extract the OSM-related data you need for it.
 
 First, long in with your OpenStreetMap credentials. You'll arrive by default at
