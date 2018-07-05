@@ -5,12 +5,12 @@ splash_image: splash.jpg
 
 When you've completely finished with a field project (or are returning to periodic internet use), the following steps need to happen:
 
-1. OMK data should be cleaned and uploaded to local OSM (see [In the field](needs link) section)
+1. OMK data should be cleaned and uploaded to local OSM (see 'In the field' section)
 2. Edits to local OSM (from iD, JOSM, and OMK) must be pushed to online-OSM. Between the time you created the AOI export to the time you are ready to push the data back, OSM users in online environments may have created changes to the map. Rather than overwriting this, you will need to go through a conflict detection process. To handle this, we've developed what we call the "POSM replay tool".
 
 ## POSM replay tool
 
-The POSM replay tool requires some command line knowledge and familiarity with GitHub. <a href="mailto:contact@posm.io">Reach out</a> if you get to this step and need some pointers.
+The POSM replay tool requires some command line knowledge and familiarity with GitHub. [Reach out](https://twitter.com/awesomeposm) if you get to this step and need some pointers.
 
 The complete instructions are [here](https://github.com/americanredcross/posm-replay-tool) and you can read more about the concepts and mechanics behind the process [here](https://hi.stamen.com/merging-offline-edits-with-the-posm-replay-tool-2f39a4410d2a#.47nht8th2).
 

@@ -15,10 +15,10 @@ needed and time required, the data required and the data model for collecting
 it, etc. There's also a lot of nuance in teaching people (especially in other
 languages/cultures) how to use different mapping tools. There are a variety of
 resources (including presentation and training materials) on the [Missing Maps
-website](www.missingmaps.org) which may be useful. You can also reach out to the
-<a href="mailto:contact@posm.io">American Red Cross GIS team</a> in advance and,
-if we have time, we may be able to talk through your project and provide
-suggestions from past experiences.
+website](www.missingmaps.org) which may be useful. You can also
+[reach out](https://twitter.com/awesomeposm) in advance and, if we have time,
+we may be able to talk through your project and provide suggestions from past
+experiences.
 
 ## Editing OSM
 

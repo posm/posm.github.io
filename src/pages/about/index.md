@@ -30,10 +30,10 @@ This means that any and all parts of a mapping workflow can happen offline. A us
 
 ![](workflow.png)
 
-POSM has been used for mapping in West Africa, Sri Lanka, Comoros, Ecuador, and Seattle. It also has potential for use as a secure data-sharing tool (e.g. local intranet for disconnected areas) and many other applications. Additional software can be integrated into the devices; <a href="mailto:contact@posm.io">contact us</a> for more information.
+POSM has been used for mapping in West Africa, Sri Lanka, Comoros, Ecuador, and Seattle. It also has potential for use as a secure data-sharing tool (e.g. local intranet for disconnected areas) and many other applications. Additional software can be integrated into the devices.
 
 ## Getting started
 
-Interested in using POSM? This site walks through all the steps for obtaining, setting up, and using the device. If you are not sure whether or not POSM is right for your project, you can <a href="mailto:contact@posm.org">contact us</a> and we can talk it through with you.
+Interested in using POSM? This site walks through all the steps for obtaining, setting up, and using the device. If you are not sure whether or not POSM is right for your project, you can [contact us](https://twitter.com/awesomeposm) and we can talk it through with you.
 
 Please note that the POSM software is free and open-source; the American Red Cross developed this for its own projects but we are happy for others to benefit from it. We do not sell the devices, nor do we make a profit on the technology.
