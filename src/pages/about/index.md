@@ -1,7 +1,7 @@
 ---
 title: About
 # We can use the one of Dale in Liberia but I'd like to find a new one for a change (#whiteman)
-splash_image: whiteman.jpg
+splash_image: dale.jpg
 ---
 
 The American Red Cross typically uses cloud-based mobile apps for its mapping work. These tools require an internet or cell phone connection to create, modify, or troubleshoot mapping surveys, and to upload data periodically. We recently conducted a project in an extremely remote area without dependable internet or cellular connectivity, where volunteers had to be offline and inaccessible for days or weeks at a time. To bridge this gap, we developed POSM (Portable OpenStreetMap) - letting us conduct major field efforts and work entirely offline for months at time.
