@@ -1,6 +1,6 @@
 ---
 title: About
-# We can use the one of Dale in Liberia but I'd like to find a new one for a change (#whiteman)
+# We can use the one of Dale in Liberia but I'd like to find a new one for a change
 splash_image: dale.jpg
 ---
 
